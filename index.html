@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <meta charset="utf-8">
 <link rel='stylesheet' href='http://nvd3.org/assets/css/nv.d3.css'>
@@ -39,26 +38,45 @@ body {
 <script>
 
 function data() {
-  var icuRaw = [0, 0, 12, 15, 20, 29, 27, 31, 23, 21, 21, 10, 17, 7, 10, 4, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 5, 4, 2, 3, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      fatalRaw = [0, 0, 5, 3, 7, 11, 15, 9, 11, 15, 15, 8, 12, 5, 6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 4, 1, 2, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      icu = [],
-      fatal2 = [];
+  var icu2014Raw = [0, 0, 12, 15, 20, 29, 27, 31, 23, 21, 21, 10, 17, 7, 10, 4, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 5, 4, 2, 3, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      fatal2014Raw = [0, 0, 5, 3, 7, 11, 15, 9, 11, 15, 15, 8, 12, 5, 6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 4, 1, 2, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      icu2014 = [],
+      fatal2014 = [],
+      icu2015Raw = [0, 15, 22, 33, 52],
+      fatal2015Raw = [0, 2, 8, 21, 33],
+      icu2015 = [],
+      fatal2015 = []
+      ;
   
   for (var i = 0; i < 52; i++) {
-    icu.push({x: i+1, y: icuRaw[i]});
-    fatal2.push({x: i+1, y: fatalRaw[i]});
+    icu2014.push({x: i+1, y: icu2014Raw[i]});
+    fatal2014.push({x: i+1, y: fatal2014Raw[i]});
+    if (icu2015Raw[i] && fatal2015Raw[i]) {
+        icu2015.push({x: i+1, y: (icu2015Raw[i] ? icu2015Raw[i] : 0)});
+        fatal2015.push({x: i+1, y: (fatal2015Raw[i] ? fatal2015Raw[i] : 0)});
+    }
   }
 
   return [
     {
-      values: icu,
-      key: 'ICU Admissions',
+      values: icu2014,
+      key: '2014 ICU Admissions',
       color: '#ff7f0e'
     },
     {
-      values: fatal2,
-      key: 'Fatal cases',
+      values: fatal2014,
+      key: '2014 Fatal cases',
       color: '#2ca02c'
+    },
+    {
+      values: icu2015,
+      key: '2015 ICU Admissions',
+      color: '#7f0eff'
+    },
+    {
+      values: fatal2015,
+      key: '2015 Fatal cases',
+      color: '#2cdd2c'
     }
   ];
 }
