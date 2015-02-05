@@ -36,75 +36,87 @@ body {
 <script src="http://nvd3.org/assets/lib/d3.v3.js"></script>
 <script src="http://nvd3.org/assets/js/nv.d3.js"></script>
 <script>
+//local development
+//var url = "data:text/json;charset=UTF-8," +
+//'{"Output":[{"a12":0,"f12":0,"a13":0,"f13":0,"a14":0,"f14":0,"a15":0,"f15":0},{"a12":0,"f12":0,"a13":0,"f13":0,"a14":0,"f14":0,"a15":15,"f15":2},{"a12":2,"f12":1,"a13":0,"f13":0,"a14":12,"f14":5,"a15":22,"f15":8},{"a12":5,"f12":3,"a13":0,"f13":0,"a14":15,"f14":3,"a15":33,"f15":21},{"a12":5,"f12":3,"a13":1,"f13":1,"a14":20,"f14":7,"a15":52,"f15":33},{"a12":11,"f12":5,"a13":6,"f13":1,"a14":29,"f14":11,"a15":"","f15":""},{"a12":5,"f12":3,"a13":5,"f13":2,"a14":27,"f14":15,"a15":"","f15":""},{"a12":11,"f12":8,"a13":5,"f13":1,"a14":31,"f14":9,"a15":"","f15":""},{"a12":10,"f12":7,"a13":3,"f13":2,"a14":23,"f14":11,"a15":"","f15":""},{"a12":8,"f12":4,"a13":5,"f13":0,"a14":21,"f14":15,"a15":"","f15":""},{"a12":10,"f12":8,"a13":5,"f13":2,"a14":21,"f14":15,"a15":"","f15":""},{"a12":9,"f12":4,"a13":7,"f13":5,"a14":10,"f14":8,"a15":"","f15":""},{"a12":18,"f12":8,"a13":7,"f13":2,"a14":17,"f14":12,"a15":"","f15":""},{"a12":12,"f12":7,"a13":4,"f13":2,"a14":7,"f14":5,"a15":"","f15":""},{"a12":7,"f12":3,"a13":7,"f13":2,"a14":10,"f14":6,"a15":"","f15":""},{"a12":6,"f12":5,"a13":4,"f13":4,"a14":4,"f14":4,"a15":"","f15":""},{"a12":5,"f12":3,"a13":4,"f13":2,"a14":4,"f14":3,"a15":"","f15":""},{"a12":16,"f12":11,"a13":3,"f13":0,"a14":2,"f14":0,"a15":"","f15":""},{"a12":10,"f12":6,"a13":1,"f13":1,"a14":0,"f14":0,"a15":"","f15":""},{"a12":17,"f12":9,"a13":1,"f13":1,"a14":0,"f14":0,"a15":"","f15":""},{"a12":27,"f12":16,"a13":1,"f13":0,"a14":0,"f14":0,"a15":"","f15":""},{"a12":34,"f12":27,"a13":0,"f13":0,"a14":0,"f14":0,"a15":"","f15":""},{"a12":26,"f12":18,"a13":0,"f13":0,"a14":0,"f14":0,"a15":"","f15":""},{"a12":14,"f12":14,"a13":0,"f13":0,"a14":0,"f14":0,"a15":"","f15":""},{"a12":17,"f12":11,"a13":0,"f13":0,"a14":0,"f14":0,"a15":"","f15":""},{"a12":13,"f12":12,"a13":0,"f13":0,"a14":0,"f14":0,"a15":"","f15":""},{"a12":12,"f12":11,"a13":0,"f13":0,"a14":4,"f14":2,"a15":"","f15":""},{"a12":9,"f12":8,"a13":0,"f13":0,"a14":6,"f14":3,"a15":"","f15":""},{"a12":6,"f12":5,"a13":0,"f13":0,"a14":5,"f14":4,"a15":"","f15":""},{"a12":6,"f12":5,"a13":0,"f13":0,"a14":4,"f14":1,"a15":"","f15":""},{"a12":0,"f12":0,"a13":3,"f13":1,"a14":2,"f14":2,"a15":"","f15":""},{"a12":0,"f12":0,"a13":2,"f13":0,"a14":3,"f14":1,"a15":"","f15":""},{"a12":0,"f12":0,"a13":7,"f13":6,"a14":4,"f14":4,"a15":"","f15":""},{"a12":0,"f12":0,"a13":7,"f13":6,"a14":1,"f14":0,"a15":"","f15":""},{"a12":0,"f12":0,"a13":4,"f13":2,"a14":0,"f14":0,"a15":"","f15":""},{"a12":0,"f12":0,"a13":3,"f13":3,"a14":0,"f14":0,"a15":"","f15":""},{"a12":0,"f12":0,"a13":5,"f13":4,"a14":0,"f14":0,"a15":"","f15":""},{"a12":0,"f12":0,"a13":3,"f13":0,"a14":0,"f14":0,"a15":"","f15":""},{"a12":0,"f12":0,"a13":9,"f13":5,"a14":0,"f14":0,"a15":"","f15":""},{"a12":0,"f12":0,"a13":3,"f13":2,"a14":0,"f14":0,"a15":"","f15":""},{"a12":0,"f12":0,"a13":5,"f13":2,"a14":0,"f14":0,"a15":"","f15":""},{"a12":0,"f12":0,"a13":0,"f13":0,"a14":0,"f14":0,"a15":"","f15":""},{"a12":0,"f12":0,"a13":2,"f13":4,"a14":0,"f14":0,"a15":"","f15":""},{"a12":0,"f12":0,"a13":3,"f13":1,"a14":0,"f14":0,"a15":"","f15":""},{"a12":0,"f12":0,"a13":0,"f13":0,"a14":0,"f14":0,"a15":"","f15":""},{"a12":0,"f12":0,"a13":0,"f13":0,"a14":0,"f14":0,"a15":"","f15":""},{"a12":0,"f12":0,"a13":0,"f13":0,"a14":0,"f14":0,"a15":"","f15":""},{"a12":0,"f12":0,"a13":0,"f13":0,"a14":0,"f14":0,"a15":"","f15":""},{"a12":0,"f12":0,"a13":0,"f13":0,"a14":0,"f14":0,"a15":"","f15":""},{"a12":0,"f12":0,"a13":0,"f13":0,"a14":0,"f14":0,"a15":"","f15":""},{"a12":0,"f12":0,"a13":0,"f13":0,"a14":0,"f14":0,"a15":"","f15":""},{"a12":0,"f12":0,"a13":0,"f13":0,"a14":0,"f14":0,"a15":"","f15":""}]}';
 
-function data() {
-  var icu2014Raw = [0, 0, 12, 15, 20, 29, 27, 31, 23, 21, 21, 10, 17, 7, 10, 4, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 5, 4, 2, 3, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      fatal2014Raw = [0, 0, 5, 3, 7, 11, 15, 9, 11, 15, 15, 8, 12, 5, 6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 4, 1, 2, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      icu2014 = [],
-      fatal2014 = [],
-      icu2015Raw = [0, 15, 22, 33, 52],
-      fatal2015Raw = [0, 2, 8, 21, 33],
-      icu2015 = [],
-      fatal2015 = []
-      ;
-  
-  for (var i = 0; i < 52; i++) {
-    icu2014.push({x: i+1, y: icu2014Raw[i]});
-    fatal2014.push({x: i+1, y: fatal2014Raw[i]});
-    if (icu2015Raw[i] && fatal2015Raw[i]) {
-        icu2015.push({x: i+1, y: (icu2015Raw[i] ? icu2015Raw[i] : 0)});
-        fatal2015.push({x: i+1, y: (fatal2015Raw[i] ? fatal2015Raw[i] : 0)});
-    }
-  }
+var = url = 'json.json';
+d3.json(url, function(data) {
+    console.log(data);
+    var transformData = [];
+    var extractJson = function(d, k){
+        var a = [];
+        for (var i = 0; i < d.length; i++) {
+            if (d[i][k] !== "") {
+                a.push([i+1, d[i][k]]);
+            }
+        }
+        return a;
+    };
+    transformData.push({
+        "key" : "ICU Admission 2015",
+        "values" : extractJson(data["Output"], "a15")
+    });
+    transformData.push({
+        "key" : "Fatal Cases 2015",
+        "values" : extractJson(data["Output"], "f15")
+    });
+    
+    transformData.push({
+        "key" : "ICU Admission 2014",
+        "values" : extractJson(data["Output"], "a14")
+    });
+    transformData.push({
+        "key" : "Fatal Cases 2014",
+        "values" : extractJson(data["Output"], "f14")
+    });
+    
+    transformData.push({
+        "key" : "ICU Admission 2013",
+        "values" : extractJson(data["Output"], "a13")
+    });
+    transformData.push({
+        "key" : "Fatal Cases 2013",
+        "values" : extractJson(data["Output"], "f13")
+    });
+    
+    transformData.push({
+        "key" : "ICU Admission 2012",
+        "values" : extractJson(data["Output"], "a12")
+    });
+    transformData.push({
+        "key" : "Fatal Cases 2012",
+        "values" : extractJson(data["Output"], "f12")
+    });
 
-  return [
-    {
-      values: icu2014,
-      key: '2014 ICU Admissions',
-      color: '#ff7f0e'
-    },
-    {
-      values: fatal2014,
-      key: '2014 Fatal cases',
-      color: '#2ca02c'
-    },
-    {
-      values: icu2015,
-      key: '2015 ICU Admissions',
-      color: '#7f0eff'
-    },
-    {
-      values: fatal2015,
-      key: '2015 Fatal cases',
-      color: '#2cdd2c'
-    }
-  ];
-}
+    console.log(transformData);
+    var chart = nv.models.lineChart()
+        .margin({right: 100})
+        .useInteractiveGuideline(true)
+        .x(function(d) { return d[0] })
+        .y(function(d) { return d[1] });
 
-nv.addGraph(function() {
-  var chart = nv.models.lineChart()
-    .useInteractiveGuideline(true)
-    ;
+//.clipEdge(true);
 
-  chart.xAxis
-    .axisLabel('Date (n-th week)')
-    .tickFormat(d3.format(',r'))
-    ;
+    chart.xAxis
+        .axisLabel('Date (n-th week)')
+        .tickFormat(d3.format(',r'))
+        ;
 
-  chart.yAxis
-    .axisLabel('Count (person)')
-    .tickFormat(d3.format(',r'))
-    ;
+    chart.yAxis
+        .axisLabel('Count (person)')
+        .tickFormat(d3.format(',r'))
+        ;
 
-  d3.select('#chart svg')
-    .datum(data())
-    .transition().duration(500)
-    .call(chart)
-    ;
+    d3.select('#chart svg')
+        .datum(transformData)
+        .transition().duration(500)
+        .call(chart)
+        ;
 
-  nv.utils.windowResize(chart.update);
+    nv.utils.windowResize(chart.update);
 
-  return chart;
+    return chart;
 });
 
 </script>
